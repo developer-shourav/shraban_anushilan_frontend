@@ -1,11 +1,17 @@
-import { Button } from "@/components/ui/button"
+import Hero from "@/components/home/Hero";
+import MissionSection from "@/components/home/MissionSection";
+import EventsSection from "@/components/home/EventsSection";
+import PublicationsSection from "@/components/home/PublicationsSection";
+import GalleryPreview from "@/components/home/GalleryPreview";
 
 export default function Home() {
   return (
-    <div>
-      <Button>Click me</Button>
-
-      Hare Krishna Hare Krishna Krishna Krishna Hare Hare Hare Rama Hare Rama Rama Rama Hare Hare
-    </div>
-  )
+    <>
+      <Hero />
+      <MissionSection />
+      <EventsSection />
+      <PublicationsSection />
+      <GalleryPreview />
+    </>
+  );
 }
