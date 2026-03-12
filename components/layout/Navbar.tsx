@@ -39,27 +39,20 @@ const Navbar = () => {
   return (
     <header className="w-full bg-[#FFFBE6]">
       {/* Top Logo Section (White Area) */}
-      <div className="py-4 mb-16">
-        <p className="text-center text-[#7A3E00] font-bold mb-5">
+      <div className="py-4">
+        <p className="text-center text-[#E16C00] font-bold mb-5">
           শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
         </p>
-        <div className=" flex px-20  items-center justify-between text-center">
-          <div className="mb-2">
-            {/* Replace with your actual Logo Image */}
-            <Image
-              src={ShrabananushilanLogo}
-              alt="Logo"
-              className="h-20 w-auto"
-            />
-          </div>
-          <h1 className="text-[#B35900] text-4xl md:text-6xl font-serif font-bold tracking-wide uppercase">
-            Shrabananushilan
-          </h1>
+        <div className="relative">
+          {/* Logo Image */}
           <Image
-            src={ISKCON_Logo}
+            src={ShrabananushilanLogo}
             alt="Logo"
-            className="h-20 w-auto"
+            className="absolute left-60 bottom-1 h-24 w-auto"
           />
+          <h1 className=" text-[#B35900] text-4xl md:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+            শ্রবণানুশীলন
+          </h1>
         </div>
       </div>
 
