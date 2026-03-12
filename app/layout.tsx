@@ -38,7 +38,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${googleSansFlex.variable} ${geistMono.variable} ${playfairDisplay.variable}`}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
-        <TopBar />
         <Navbar />
         <main className="flex-1">
           {children}

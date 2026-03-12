@@ -17,7 +17,7 @@ import navStaringDesign from "@/assets/images/header-starting.png";
 import navEndDesign from "@/assets/images/header-ending.png";
 import featherDesign from "@/assets/images/feather.png";
 import ShrabananushilanLogo from "@/assets/logos/shrabananushilan.png";
-import ISKCON_Logo from "@/assets/logos/ISKCON-Logo.png";
+// import ISKCON_Logo from "@/assets/logos/ISKCON-Logo.png";
 import Image from "next/image";
 
 const NAV_ITEMS = [
@@ -54,9 +54,9 @@ const Navbar = () => {
       </div>
 
       {/* Flute Navigation Bar */}
-      <div className="relative w-full px-4 md:px-10 pb-6">
+      <div className="relative w-full  pb-6">
         <nav
-          className="relative h-12 md:h-14 flex items-center justify-center shadow-lg"
+          className="relative h-8 flex items-center justify-center shadow-lg "
           style={{
             // Bamboo/Flute Gradient
             background:
@@ -66,7 +66,7 @@ const Navbar = () => {
           {/* Left End Cap Image */}
           <Image
             src={navStaringDesign}
-            className="absolute left-[-15px] md:left-[-30px] h-full z-10"
+            className="absolute left-0 -top-10.5 z-10"
             alt=""
           />
 
@@ -85,7 +85,7 @@ const Navbar = () => {
                 </Link>
                 {/* Vertical Divider (The flute "holes" or segments) */}
                 {index !== NAV_ITEMS.length - 1 && (
-                  <div className="h-14 w-[2px] bg-gradient-to-b from-[#804000] via-[#ffcc00] to-[#804000] opacity-50" />
+                  <div className="h-8 w-0.5 bg-linear-to-b from-[#804000] via-[#ffcc00] to-[#804000] opacity-50" />
                 )}
               </div>
             ))}
@@ -94,7 +94,7 @@ const Navbar = () => {
           {/* Right End Cap Image */}
           <Image
             src={navEndDesign}
-            className="absolute right-[-15px] md:right-[-30px] h-full z-10"
+            className="absolute right-0 -top-10.5 z-10"
             alt=""
           />
 
@@ -126,11 +126,11 @@ const Navbar = () => {
         </nav>
 
         {/* Peacock Feather Decoration */}
-        <div className="absolute right-2 -bottom-2.5 pointer-events-none">
+        <div className="absolute right-36 bottom-14 pointer-events-none z-0">
           <Image
             src={featherDesign}
             alt=""
-            className="h-24 md:h-32 opacity-90"
+            className="w-34"
           />
         </div>
       </div>
