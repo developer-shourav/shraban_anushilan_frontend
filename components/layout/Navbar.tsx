@@ -17,7 +17,7 @@ import navStaringDesign from "@/assets/images/header-starting.png";
 import navEndDesign from "@/assets/images/header-ending.png";
 import featherDesign from "@/assets/images/feather.png";
 import ShrabananushilanLogo from "@/assets/logos/shrabananushilan.png";
-// import ISKCON_Logo from "@/assets/logos/ISKCON-Logo.png";
+import ISKCON_Logo from "@/assets/logos/ISKCON-Logo.png";
 import Image from "next/image";
 
 const NAV_ITEMS = [
@@ -39,21 +39,28 @@ const Navbar = () => {
   return (
     <header className="w-full bg-[#FFFBE6]">
       {/* Top Logo Section (White Area) */}
-      <div className="py-4 flex flex-col items-center justify-center text-center">
-        <div className="mb-2">
-          {/* Replace with your actual Logo Image */}
+      <div className="py-4 mb-16">
+        <p className="text-center text-[#7A3E00] font-bold mb-5">
+          শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
+        </p>
+        <div className=" flex px-20  items-center justify-between text-center">
+          <div className="mb-2">
+            {/* Replace with your actual Logo Image */}
+            <Image
+              src={ShrabananushilanLogo}
+              alt="Logo"
+              className="h-20 w-auto"
+            />
+          </div>
+          <h1 className="text-[#B35900] text-4xl md:text-6xl font-serif font-bold tracking-wide uppercase">
+            Shrabananushilan
+          </h1>
           <Image
-            src={ShrabananushilanLogo}
+            src={ISKCON_Logo}
             alt="Logo"
             className="h-20 w-auto"
           />
         </div>
-        <h1 className="text-[#B35900] text-4xl md:text-6xl font-serif font-bold tracking-wide uppercase">
-          Shrabananushilan
-        </h1>
-        <p className="text-[#7A3E00] text-lg md:text-2xl font-medium mt-1">
-          Kirtaniya Sada Hari
-        </p>
       </div>
 
       {/* Flute Navigation Bar */}
@@ -66,7 +73,6 @@ const Navbar = () => {
               "linear-gradient(to bottom, #cc6600 0%, #ff9900 25%, #ffcc00 50%, #ff9900 75%, #994c00 100%)",
           }}
         >
-          {/* --- NEW RED BORDERS --- */}
           {/* Left Red Border Group */}
           <div className="absolute left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
             <div className="w-3.5 h-full bg-[#b30000]/80" />
@@ -78,7 +84,6 @@ const Navbar = () => {
             <div className="w-3.5 h-full bg-[#b30000]/80" />
             <div className="w-3.5 h-full bg-[#b30000]/80" />
           </div>
-          {/* ----------------------- */}
           {/* Left End Cap Image */}
           <Image
             src={navStaringDesign}
