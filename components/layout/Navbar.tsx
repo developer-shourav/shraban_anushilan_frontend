@@ -42,8 +42,11 @@ const Navbar = () => {
       <div className="py-4 flex flex-col items-center justify-center text-center">
         <div className="mb-2">
           {/* Replace with your actual Logo Image */}
-          <Image src={ShrabananushilanLogo} alt="Logo" className="h-20 w-auto" />
-   
+          <Image
+            src={ShrabananushilanLogo}
+            alt="Logo"
+            className="h-20 w-auto"
+          />
         </div>
         <h1 className="text-[#B35900] text-4xl md:text-6xl font-serif font-bold tracking-wide uppercase">
           Shrabananushilan
@@ -63,6 +66,19 @@ const Navbar = () => {
               "linear-gradient(to bottom, #cc6600 0%, #ff9900 25%, #ffcc00 50%, #ff9900 75%, #994c00 100%)",
           }}
         >
+          {/* --- NEW RED BORDERS --- */}
+          {/* Left Red Border Group */}
+          <div className="absolute left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
+            <div className="w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-3.5 h-full bg-[#b30000]/80" />
+          </div>
+
+          {/* Right Red Border Group */}
+          <div className="absolute right-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
+            <div className="w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-3.5 h-full bg-[#b30000]/80" />
+          </div>
+          {/* ----------------------- */}
           {/* Left End Cap Image */}
           <Image
             src={navStaringDesign}
@@ -127,11 +143,7 @@ const Navbar = () => {
 
         {/* Peacock Feather Decoration */}
         <div className="absolute right-36 bottom-14 pointer-events-none z-0">
-          <Image
-            src={featherDesign}
-            alt=""
-            className="w-34"
-          />
+          <Image src={featherDesign} alt="" className="w-34" />
         </div>
       </div>
     </header>
