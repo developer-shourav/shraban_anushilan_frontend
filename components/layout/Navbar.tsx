@@ -46,9 +46,9 @@ const Navbar = () => {
           <Image
             src={ShrabananushilanLogo}
             alt="Logo"
-            className="absolute left-9 bottom-0 h-16 lg:left-60 lg:bottom-1 lg:h-24 w-auto"
+            className="absolute left-9 bottom-0 h-16 lg:left-50 xl:left-60 lg:bottom-1 lg:h-24 w-auto"
           />
-          <h1 className=" text-[#B35900] text-[40px] md:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+          <h1 className=" text-[#B35900] text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
             শ্রবণানুশীলন
           </h1>
         </div>
@@ -66,19 +66,19 @@ const Navbar = () => {
         >
           {/* Left Red Border Group */}
           <div className="absolute left-[9.5%] lg:left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
           </div>
 
           {/* Right Red Border Group */}
           <div className="absolute right-[12%] lg:right-[8%] z-20 hidden lg:flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
           </div>
           {/* Left End Cap Image */}
           <Image
             src={navStaringDesign}
-            className="w-14.5 h-7 lg:w-37.5 lg:h-11  absolute left-0  -top-6.5 lg:-top-10.5 z-10"
+            className="w-14.5 h-7 lg:w-30 lg:h-8 xl:w-37.5 xl:h-11  absolute left-0  -top-6.5 lg:-top-7.5 xl:-top-10.5 z-10"
             alt=""
           />
 
@@ -89,7 +89,7 @@ const Navbar = () => {
                 <Link
                   href={item.href}
                   className={cn(
-                    "px-4 text-xs md:text-sm font-bold transition-all hover:text-white uppercase",
+                    "px-3 xl:px-4 text-xs xl:text-sm font-bold transition-all hover:text-white uppercase",
                     pathname === item.href ? "text-white" : "text-[#5C2E00]",
                   )}
                 >
@@ -106,7 +106,7 @@ const Navbar = () => {
           {/* Right End Cap Image */}
           <Image
             src={navEndDesign}
-            className="w-14.5 h-7 lg:w-37.5 lg:h-11 absolute right-0 -top-6.5 lg:-top-10.5 z-10"
+            className="w-14.5 h-7 lg:w-30 lg:h-8 xl:w-37.5 xl:h-11 absolute right-0 -top-6.5 lg:-top-7.5 xl:-top-10.5 z-10"
             alt=""
           />
 
@@ -114,7 +114,7 @@ const Navbar = () => {
           <div className="lg:hidden absolute right-4">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <MenuIcon className="h-8 w-8 text-[#5C2E00] hover:text-white" />
+                <MenuIcon className="h-7 w-7 text-[#5C2E00] hover:text-white" />
               </SheetTrigger>
               <SheetContent>
                 <SheetTitle>Navigation</SheetTitle>
