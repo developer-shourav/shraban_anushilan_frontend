@@ -25,9 +25,9 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Gaudiya Mission - Spreading Universal Brotherhood",
+  title: "শ্রবণানুশীলন Shrabananushilan",
   description:
-    "Official website of Gaudiya Mission, established in 1918. Dedicated to spreading the message of Sri Chaitanya Mahaprabhu and universal brotherhood.",
+    "Hare Krishna Shrabananushilan is a non-profit organization dedicated to promoting the teachings of Lord Krishna and fostering spiritual growth. We organize various events, workshops, and community activities to spread the message of love, compassion, and devotion. Join us in our mission to create a harmonious and spiritually enriched society.",
 };
 
 export default function RootLayout({

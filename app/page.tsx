@@ -7,7 +7,7 @@ import GalleryPreview from "@/components/home/GalleryPreview";
 export default function Home() {
   return (
     <>
-      {/* <Hero /> */}
+     {/*  <Hero /> */}
       <MissionSection />
       <EventsSection />
       <PublicationsSection />
