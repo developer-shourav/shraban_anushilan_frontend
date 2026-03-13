@@ -35,10 +35,10 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="w-full bg-[#FFFBE6]">
+    <header className="w-full bg-background">
       {/* Top Logo Section (White Area) */}
       <div className="py-4">
-        <p className="text-center text-[10px] xs:text-sm lg:text-[16px] text-[#E16C00] font-bold mb-0 lg:mb-5">
+        <p className="text-center text-[10px] xs:text-sm lg:text-[16px] text-primary font-bold mb-0 lg:mb-5">
           শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
         </p>
         <div className="relative">
@@ -48,7 +48,7 @@ const Navbar = () => {
             alt="Logo"
             className="absolute left-7 xs:left-9 bottom-1 xs:bottom-0 h-11 xs:h-15 md:h-18 lg:left-50 xl:left-60 lg:bottom-1 lg:h-24 w-auto"
           />
-          <h1 className=" text-[#B35900] text-[33px] xs:text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+          <h1 className=" text-secondary text-[33px] xs:text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
             শ্রবণানুশীলন
           </h1>
         </div>
@@ -66,14 +66,14 @@ const Navbar = () => {
         >
           {/* Left Red Border Group */}
           <div className="absolute left-[9.5%] lg:left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
           </div>
 
           {/* Right Red Border Group */}
           <div className="absolute right-[12%] lg:right-[8%] z-20 hidden md:flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
+            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
           </div>
           {/* Left End Cap Image */}
           <Image
@@ -90,14 +90,14 @@ const Navbar = () => {
                   href={item.href}
                   className={cn(
                     "px-3 xl:px-4 text-xs xl:text-sm font-bold transition-all hover:text-white uppercase",
-                    pathname === item.href ? "text-white" : "text-[#5C2E00]",
+                    pathname === item.href ? "text-white" : "text-foreground",
                   )}
                 >
                   {item.label}
                 </Link>
                 {/* Vertical Divider (The flute "holes" or segments) */}
                 {index !== NAV_ITEMS.length - 1 && (
-                  <div className="h-8 w-0.5 bg-linear-to-b from-[#804000] via-[#ffcc00] to-[#804000] opacity-50" />
+                  <div className="h-8 w-0.5 bg-linear-to-b from-[#804000] via-accent to-[#804000] opacity-50" />
                 )}
               </div>
             ))}
@@ -115,13 +115,13 @@ const Navbar = () => {
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <button className="p-1 hover:bg-white/10 rounded-md transition-colors">
-                  <MenuIcon className="h-6 w-6 xs:h-7 xs:w-7 text-[#5C2E00] hover:text-white" />
+                  <MenuIcon className="h-6 w-6 xs:h-7 xs:w-7 text-foreground hover:text-white" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-50 xs:w-70 bg-[#FFFBE6] p-0 border-l-0">
+              <SheetContent side="right" className="w-50 xs:w-70 bg-background p-0 border-l-0">
                 <div className="flex flex-col h-full">
                   {/* Mobile Header with Logo and Title */}
-                  <div className="p-5 border-b border-[#E16C00]/10">
+                  <div className="p-5 border-b border-primary/10">
                     <SheetTitle asChild>
                       <div className="flex items-center gap-3">
                         <Image
@@ -129,7 +129,7 @@ const Navbar = () => {
                           alt="Logo"
                           className="h-10 w-auto xs:h-12"
                         />
-                        <h2 className="text-[#B35900] text-xl xs:text-2xl font-bold font-BanglaHeading">
+                        <h2 className="text-secondary text-xl xs:text-2xl font-bold font-BanglaHeading">
                           শ্রবণানুশীলন
                         </h2>
                       </div>
@@ -146,8 +146,8 @@ const Navbar = () => {
                         className={cn(
                           "px-3 py-2.5 text-xs xs:text-sm font-bold transition-all border-l-4",
                           pathname === item.href
-                            ? "text-[#E16C00] border-[#E16C00] bg-[#E16C00]/5"
-                            : "text-[#5C2E00] border-transparent hover:bg-[#E16C00]/5"
+                            ? "text-primary border-primary bg-primary/5"
+                            : "text-foreground border-transparent hover:bg-primary/5"
                         )}
                       >
                         {item.label}

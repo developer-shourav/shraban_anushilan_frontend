@@ -36,23 +36,23 @@ const books = [
 
 const PublicationsSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-stone-100">
+    <section className="py-16 md:py-24 bg-muted/40">
       <Container>
         <SectionHeading title="Publications" subtitle="Explore our collection of spiritual literature." />
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {books.map((book) => (
-            <div key={book.id} className="group relative bg-white p-4 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div key={book.id} className="group relative bg-background p-4 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-primary/5">
               <div className={`aspect-[2/3] w-full ${book.coverColor} rounded-lg shadow-md mb-4 flex items-center justify-center text-white/30 text-4xl font-serif`}>
                 Book
               </div>
-              <h3 className="font-bold text-lg leading-tight mb-1 group-hover:text-primary transition-colors">
+              <h3 className="font-bold text-lg leading-tight mb-1 group-hover:text-primary transition-colors text-foreground">
                 {book.title}
               </h3>
               <p className="text-sm text-muted-foreground mb-3">{book.author}</p>
               <div className="flex items-center justify-between mt-auto">
-                <span className="font-semibold text-lg text-slate-800">{book.price}</span>
-                <Button size="icon" variant="ghost" className="hover:bg-primary hover:text-white transition-colors rounded-full">
+                <span className="font-semibold text-lg text-foreground">{book.price}</span>
+                <Button size="icon" variant="ghost" className="hover:bg-primary hover:text-primary-foreground transition-colors rounded-full text-primary">
                   <ShoppingCart className="h-5 w-5" />
                 </Button>
               </div>
@@ -61,7 +61,7 @@ const PublicationsSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <Button variant="outline" size="lg" className="border-stone-400 text-stone-700 hover:bg-stone-200">
+          <Button variant="outline" size="lg" className="border-primary/30 text-primary hover:bg-primary/10">
             Visit Bookstore
           </Button>
         </div>

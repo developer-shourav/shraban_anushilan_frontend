@@ -36,15 +36,15 @@ const EventsSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {events.map((event) => (
-            <Card key={event.id} className="hover:shadow-lg transition-shadow duration-300 border-orange-100">
-              <div className="h-48 bg-orange-50 w-full relative">
+            <Card key={event.id} className="hover:shadow-lg transition-shadow duration-300 border-primary/10">
+              <div className="h-48 bg-accent/10 w-full relative">
                  {/* Image Placeholder */}
-                 <div className="absolute inset-0 flex items-center justify-center text-orange-200 font-bold text-4xl opacity-20">
+                 <div className="absolute inset-0 flex items-center justify-center text-accent/20 font-bold text-4xl opacity-20">
                    Event
                  </div>
               </div>
               <CardHeader>
-                <div className="flex items-center gap-2 text-sm text-orange-600 font-medium mb-2">
+                <div className="flex items-center gap-2 text-sm text-primary font-medium mb-2">
                   <Calendar className="h-4 w-4" />
                   <span>{event.date}</span>
                 </div>
@@ -59,7 +59,7 @@ const EventsSection = () => {
                 </CardDescription>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-orange-50 text-orange-700 hover:bg-orange-100 border border-orange-200">
+                <Button className="w-full bg-accent/10 text-primary hover:bg-accent/20 border border-primary/20">
                   View Details
                 </Button>
               </CardFooter>
@@ -68,7 +68,7 @@ const EventsSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <Button variant="default" size="lg" className="bg-slate-900 text-white hover:bg-slate-800">
+          <Button variant="default" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
             View All Events
           </Button>
         </div>
