@@ -38,7 +38,7 @@ const Navbar = () => {
     <header className="w-full bg-[#FFFBE6]">
       {/* Top Logo Section (White Area) */}
       <div className="py-4">
-        <p className="text-center text-sm lg:text-[16px] text-[#E16C00] font-bold mb-0 lg:mb-5">
+        <p className="text-center text-[10px] xs:text-sm lg:text-[16px] text-[#E16C00] font-bold mb-0 lg:mb-5">
           শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
         </p>
         <div className="relative">
@@ -46,9 +46,9 @@ const Navbar = () => {
           <Image
             src={ShrabananushilanLogo}
             alt="Logo"
-            className="absolute left-9 bottom-0 h-16 lg:left-50 xl:left-60 lg:bottom-1 lg:h-24 w-auto"
+            className="absolute left-7 xs:left-9 bottom-1 xs:bottom-0 h-11 xs:h-15 md:h-18 lg:left-50 xl:left-60 lg:bottom-1 lg:h-24 w-auto"
           />
-          <h1 className=" text-[#B35900] text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+          <h1 className=" text-[#B35900] text-[33px] xs:text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
             শ্রবণানুশীলন
           </h1>
         </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
           </div>
 
           {/* Right Red Border Group */}
-          <div className="absolute right-[12%] lg:right-[8%] z-20 hidden lg:flex gap-1 h-full mix-blend-multiply">
+          <div className="absolute right-[12%] lg:right-[8%] z-20 hidden md:flex gap-1 h-full mix-blend-multiply">
             <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
             <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-[#b30000]/80" />
           </div>
@@ -137,7 +137,7 @@ const Navbar = () => {
 
         {/* Peacock Feather Decoration */}
         <div className="absolute right-8 bottom-16 lg:right-36 lg:bottom-14 pointer-events-none z-0">
-          <Image src={featherDesign} alt="" className=" w-24 lg:w-34" />
+          <Image src={featherDesign} alt="" className="w-18 xs:w-22 md:w-28 lg:w-34" />
         </div>
       </div>
     </header>
