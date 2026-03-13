@@ -110,25 +110,50 @@ const Navbar = () => {
             alt=""
           />
 
-          {/* Mobile Toggle */}
-          <div className="lg:hidden absolute right-4">
+          {/* -------------Mobile Toggle-------------*/}
+          <div className="lg:hidden absolute right-4 flex items-center h-full z-30">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <MenuIcon className="h-7 w-7 text-[#5C2E00] hover:text-white" />
+                <button className="p-1 hover:bg-white/10 rounded-md transition-colors">
+                  <MenuIcon className="h-6 w-6 xs:h-7 xs:w-7 text-[#5C2E00] hover:text-white" />
+                </button>
               </SheetTrigger>
-              <SheetContent>
-                <SheetTitle>Navigation</SheetTitle>
-                <div className="flex flex-col gap-4 mt-8">
-                  {NAV_ITEMS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="text-lg font-bold"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+              <SheetContent side="right" className="w-50 xs:w-70 bg-[#FFFBE6] p-0 border-l-0">
+                <div className="flex flex-col h-full">
+                  {/* Mobile Header with Logo and Title */}
+                  <div className="p-5 border-b border-[#E16C00]/10">
+                    <SheetTitle asChild>
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={ShrabananushilanLogo}
+                          alt="Logo"
+                          className="h-10 w-auto xs:h-12"
+                        />
+                        <h2 className="text-[#B35900] text-xl xs:text-2xl font-bold font-BanglaHeading">
+                          শ্রবণানুশীলন
+                        </h2>
+                      </div>
+                    </SheetTitle>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <div className="flex flex-col py-2 overflow-y-auto">
+                    {NAV_ITEMS.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={cn(
+                          "px-3 py-2.5 text-xs xs:text-sm font-bold transition-all border-l-4",
+                          pathname === item.href
+                            ? "text-[#E16C00] border-[#E16C00] bg-[#E16C00]/5"
+                            : "text-[#5C2E00] border-transparent hover:bg-[#E16C00]/5"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
