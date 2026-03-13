@@ -3,8 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MenuIcon } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -17,7 +16,6 @@ import navStaringDesign from "@/assets/images/header-starting.png";
 import navEndDesign from "@/assets/images/header-ending.png";
 import featherDesign from "@/assets/images/feather.png";
 import ShrabananushilanLogo from "@/assets/logos/shrabananushilan.png";
-import ISKCON_Logo from "@/assets/logos/ISKCON-Logo.png";
 import Image from "next/image";
 
 const NAV_ITEMS = [
@@ -40,7 +38,7 @@ const Navbar = () => {
     <header className="w-full bg-[#FFFBE6]">
       {/* Top Logo Section (White Area) */}
       <div className="py-4">
-        <p className="text-center text-[#E16C00] font-bold mb-5">
+        <p className="text-center text-sm lg:text-[16px] text-[#E16C00] font-bold mb-0 lg:mb-5">
           শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
         </p>
         <div className="relative">
@@ -48,9 +46,9 @@ const Navbar = () => {
           <Image
             src={ShrabananushilanLogo}
             alt="Logo"
-            className="absolute left-60 bottom-1 h-24 w-auto"
+            className="absolute left-9 bottom-0 h-16 lg:left-60 lg:bottom-1 lg:h-24 w-auto"
           />
-          <h1 className=" text-[#B35900] text-4xl md:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+          <h1 className=" text-[#B35900] text-[40px] md:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
             শ্রবণানুশীলন
           </h1>
         </div>
@@ -59,7 +57,7 @@ const Navbar = () => {
       {/* Flute Navigation Bar */}
       <div className="relative w-full  pb-6">
         <nav
-          className="relative h-8 flex items-center justify-center shadow-lg "
+          className="relative h-10 lg:h-8 flex items-center justify-center shadow-lg "
           style={{
             // Bamboo/Flute Gradient
             background:
@@ -67,20 +65,20 @@ const Navbar = () => {
           }}
         >
           {/* Left Red Border Group */}
-          <div className="absolute left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
-            <div className="w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-3.5 h-full bg-[#b30000]/80" />
+          <div className="absolute left-[9.5%] lg:left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
+            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
           </div>
 
           {/* Right Red Border Group */}
-          <div className="absolute right-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
-            <div className="w-3.5 h-full bg-[#b30000]/80" />
-            <div className="w-3.5 h-full bg-[#b30000]/80" />
+          <div className="absolute right-[12%] lg:right-[8%] z-20 hidden lg:flex gap-1 h-full mix-blend-multiply">
+            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
+            <div className="w-2 lg:w-3.5 h-full bg-[#b30000]/80" />
           </div>
           {/* Left End Cap Image */}
           <Image
             src={navStaringDesign}
-            className="absolute left-0 -top-10.5 z-10"
+            className="w-14.5 h-7 lg:w-37.5 lg:h-11  absolute left-0  -top-6.5 lg:-top-10.5 z-10"
             alt=""
           />
 
@@ -108,7 +106,7 @@ const Navbar = () => {
           {/* Right End Cap Image */}
           <Image
             src={navEndDesign}
-            className="absolute right-0 -top-10.5 z-10"
+            className="w-14.5 h-7 lg:w-37.5 lg:h-11 absolute right-0 -top-6.5 lg:-top-10.5 z-10"
             alt=""
           />
 
@@ -116,9 +114,7 @@ const Navbar = () => {
           <div className="lg:hidden absolute right-4">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-white">
-                  <Menu className="h-6 w-6" />
-                </Button>
+                <MenuIcon className="h-8 w-8 text-[#5C2E00] hover:text-white" />
               </SheetTrigger>
               <SheetContent>
                 <SheetTitle>Navigation</SheetTitle>
@@ -140,8 +136,8 @@ const Navbar = () => {
         </nav>
 
         {/* Peacock Feather Decoration */}
-        <div className="absolute right-36 bottom-14 pointer-events-none z-0">
-          <Image src={featherDesign} alt="" className="w-34" />
+        <div className="absolute right-8 bottom-16 lg:right-36 lg:bottom-14 pointer-events-none z-0">
+          <Image src={featherDesign} alt="" className=" w-24 lg:w-34" />
         </div>
       </div>
     </header>
