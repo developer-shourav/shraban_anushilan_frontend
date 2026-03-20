@@ -1,73 +1,80 @@
 import Link from "next/link";
 import Container from "@/components/shared/Container";
-import { Facebook, Twitter, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { BookOpen, Facebook, HeartHandshake, Instagram, Mail, Users, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground">
       <Container className="py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Column 1: About */}
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4 font-BanglaHeading tracking-wide">শ্রবণানুশীলন</h3>
+            <h3 className="mb-4 font-BanglaHeading text-xl font-bold tracking-wide text-white">শ্রবণানুশীলন</h3>
             <p className="text-sm leading-relaxed text-primary-foreground/80">
-              Spreading the message of universal brotherhood and the teachings of Sri Sri Guru & Gauranga since 1918.
+              Shrabananushilan is a non-profit spiritual and cultural organization centered on attentive hearing,
+              devotional practice, study, and compassionate community service.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="hover:text-accent transition-colors"><Facebook className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Twitter className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></a>
-              <a href="#" className="hover:text-accent transition-colors"><Youtube className="h-5 w-5" /></a>
+              <a href="#" aria-label="Facebook" className="transition-colors hover:text-accent">
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a href="#" aria-label="Instagram" className="transition-colors hover:text-accent">
+                <Instagram className="h-5 w-5" />
+              </a>
+              <a href="#" aria-label="Youtube" className="transition-colors hover:text-accent">
+                <Youtube className="h-5 w-5" />
+              </a>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">Quick Links</h3>
+            <h3 className="mb-4 text-xl font-bold text-white">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link href="/centres" className="hover:text-accent transition-colors">Our Centres</Link></li>
-              <li><Link href="/activities" className="hover:text-accent transition-colors">Activities</Link></li>
-              <li><Link href="/publication" className="hover:text-accent transition-colors">Publications</Link></li>
-              <li><Link href="/gallery" className="hover:text-accent transition-colors">Gallery</Link></li>
-              <li><Link href="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
+              <li><Link href="/about" className="transition-colors hover:text-accent">About Us</Link></li>
+              <li><Link href="/centres" className="transition-colors hover:text-accent">Our Centres</Link></li>
+              <li><Link href="/activities" className="transition-colors hover:text-accent">Activities</Link></li>
+              <li><Link href="/publication" className="transition-colors hover:text-accent">Publications</Link></li>
+              <li><Link href="/gallery" className="transition-colors hover:text-accent">Gallery</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-accent">Contact Us</Link></li>
             </ul>
           </div>
 
-          {/* Column 3: Resources */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">Resources</h3>
+            <h3 className="mb-4 text-xl font-bold text-white">Get Involved</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/donate" className="hover:text-accent transition-colors">Donate</Link></li>
-              <li><Link href="/blog" className="hover:text-accent transition-colors">Blog</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="/museum" className="hover:text-accent transition-colors">Chaitanya Museum</Link></li>
+              <li><Link href="/auth?mode=register" className="transition-colors hover:text-accent">Join Shrabananushilan</Link></li>
+              <li><Link href="/auth?mode=login" className="transition-colors hover:text-accent">Member Login</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-accent">Blog</Link></li>
+              <li><Link href="/publication" className="transition-colors hover:text-accent">Learning Resources</Link></li>
+              <li><Link href="/activities" className="transition-colors hover:text-accent">Volunteer Activities</Link></li>
+              <li><Link href="/gallery" className="transition-colors hover:text-accent">Community Gallery</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-white mb-4">Contact Us</h3>
+            <h3 className="mb-4 text-xl font-bold text-white">What We Nurture</h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <p>Bagbazar Gaudiya Math<br />16A, Kaliprasad Chakraborty Street,<br />Kolkata - 700 003, West Bengal, India</p>
+                <BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <p>Scripture study, devotional listening, and regular satsanga gatherings.</p>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent shrink-0" />
-                <a href="tel:+913325544111" className="hover:text-accent transition-colors">+91 33 2554 4111</a>
+                <Users className="h-5 w-5 shrink-0 text-accent" />
+                <p>Community programs for learners, families, and volunteers.</p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:info@gaudiyamission.org" className="hover:text-accent transition-colors">info@gaudiyamission.org</a>
+                <HeartHandshake className="h-5 w-5 shrink-0 text-accent" />
+                <p>Service initiatives rooted in humility, care, and shared practice.</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 shrink-0 text-accent" />
+                <Link href="/contact" className="transition-colors hover:text-accent">Reach us through the contact page</Link>
               </div>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} শ্রবণানুশীলন (Gaudiya Mission). All rights reserved.</p>
+
+        <div className="mt-12 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
+          <p>&copy; {new Date().getFullYear()} শ্রবণানুশীলন Shrabananushilan. All rights reserved.</p>
         </div>
       </Container>
     </footer>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/shared/Container";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
@@ -5,31 +6,35 @@ import { ChevronRight } from "lucide-react";
 
 const MissionSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-muted/30">
+    <section className="bg-muted/30 py-16 md:py-24">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           <div className="space-y-6">
-            <SectionHeading 
-              title="Our Mission" 
-              subtitle="Spreading the message of universal brotherhood." 
+            <SectionHeading
+              title="Our Mission"
+              subtitle="Nurturing attentive hearing, devotional culture, and service-minded community life."
               align="left"
               className="mb-6"
             />
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              Established in 1918, Gaudiya Mission is a spiritual and philanthropic organization dedicated to propagating the teachings of Sri Chaitanya Mahaprabhu. Our core philosophy revolves around the practice of Bhakti Yoga and the service of humanity irrespective of caste, creed, or religion.
+            <p className="text-lg leading-relaxed text-foreground/80">
+              Shrabananushilan is a non-profit initiative dedicated to creating a welcoming space for spiritual
+              learning, reflection, and shared practice. Through hearing, discussion, and remembrance, we encourage a
+              life shaped by humility, compassion, and devotion.
             </p>
-            <p className="text-lg text-foreground/80 leading-relaxed">
-              We aim to revive the ancient Vedic culture and instill spiritual values in modern society through our various centres, educational institutes, and charitable activities.
+            <p className="text-lg leading-relaxed text-foreground/80">
+              Our work brings people together through satsanga, educational programs, publications, cultural
+              activities, and service efforts that support both inner growth and collective well-being.
             </p>
-            <Button variant="outline" className="mt-4 gap-2 border-primary/50 text-primary hover:bg-primary/10 hover:text-primary-foreground">
-              Read More <ChevronRight className="h-4 w-4" />
+            <Button asChild variant="outline" className="mt-4 gap-2 border-primary/50 text-primary hover:bg-primary/10">
+              <Link href="/about">
+                Read More <ChevronRight className="h-4 w-4" />
+              </Link>
             </Button>
           </div>
-          
-          <div className="relative aspect-video md:aspect-square rounded-2xl overflow-hidden shadow-2xl bg-muted/50">
-            {/* Image Placeholder */}
-            <div className="absolute inset-0 bg-muted/80 flex items-center justify-center text-muted-foreground font-medium">
-               Mission Image / Temple Photo
+
+          <div className="relative aspect-video overflow-hidden rounded-2xl bg-muted/50 shadow-2xl md:aspect-square">
+            <div className="absolute inset-0 flex items-center justify-center bg-muted/80 text-center font-medium text-muted-foreground">
+              Mission image or community photo
             </div>
           </div>
         </div>

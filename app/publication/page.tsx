@@ -2,50 +2,56 @@ import PageHeader from "@/components/shared/PageHeader";
 import Container from "@/components/shared/Container";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Download, ExternalLink } from "lucide-react";
+import { Download, ExternalLink, ShoppingCart } from "lucide-react";
 
 const books = [
-  { id: 1, title: "Srimad Bhagavatam - Canto 1", price: "₹ 550", color: "bg-red-800" },
-  { id: 2, title: "Chaitanya Charitamrita", price: "₹ 800", color: "bg-amber-700" },
-  { id: 3, title: "Bhakti Rasamrita Sindhu", price: "₹ 450", color: "bg-emerald-800" },
-  { id: 4, title: "Jaiva Dharma", price: "₹ 350", color: "bg-indigo-800" },
+  { id: 1, title: "Shravan Notes: Foundational Readings", price: "Member Resource", color: "bg-red-800" },
+  { id: 2, title: "Satsanga Journal", price: "Digital Edition", color: "bg-amber-700" },
+  { id: 3, title: "Festival Companion", price: "Free Download", color: "bg-emerald-800" },
+  { id: 4, title: "Community Study Workbook", price: "Study Pack", color: "bg-indigo-800" },
 ];
 
 const magazines = [
-  { id: 1, title: "Vaikuntha Varta (Bengali Monthly)", type: "Magazine" },
-  { id: 2, title: "Bhaktipatra (Hindi Monthly)", type: "Magazine" },
-  { id: 3, title: "Harmonist (English Annual)", type: "Magazine" },
+  { id: 1, title: "Shrabananushilan Bulletin", type: "Community Update" },
+  { id: 2, title: "Volunteer Digest", type: "Newsletter" },
+  { id: 3, title: "Festival Review", type: "Seasonal Publication" },
 ];
 
 export const metadata = {
-  title: "Publications - Gaudiya Mission",
-  description: "Browse our collection of spiritual books and magazines.",
+  title: "Publications - Shrabananushilan",
+  description: "Browse learning resources, journals, and publications from Shrabananushilan.",
 };
 
 const PublicationPage = () => {
   return (
     <>
-      <PageHeader 
-        title="Our Publications" 
-        subtitle="Spiritual literature designed to enlighten the soul and guide the seeker." 
+      <PageHeader
+        title="Our Publications"
+        subtitle="Resources created to support hearing, study, teaching, and community learning."
       />
-      
-      {/* Books Section */}
+
       <section className="py-16 md:py-24">
         <Container>
-          <SectionHeading title="Spiritual Books" align="left" className="mb-12" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <SectionHeading title="Study Resources" align="left" className="mb-12" />
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {books.map((book) => (
-              <div key={book.id} className="group bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className={`aspect-[2/3] w-full ${book.color} rounded-lg shadow-inner mb-6 flex items-center justify-center text-white/20 text-5xl font-serif`}>
+              <div
+                key={book.id}
+                className="group rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+              >
+                <div
+                  className={`mb-6 flex aspect-[2/3] w-full items-center justify-center rounded-lg ${book.color} text-5xl font-serif text-white/20 shadow-inner`}
+                >
                   Book
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors font-heading leading-tight">{book.title}</h3>
-                <div className="flex items-center justify-between mt-4">
-                   <span className="text-lg font-semibold text-slate-800">{book.price}</span>
-                   <Button size="sm" variant="outline" className="gap-2">
-                      <ShoppingCart className="h-4 w-4" /> Add to Cart
-                   </Button>
+                <h3 className="font-heading text-xl font-bold leading-tight transition-colors group-hover:text-primary">
+                  {book.title}
+                </h3>
+                <div className="mt-4 flex items-center justify-between">
+                  <span className="text-lg font-semibold text-slate-800">{book.price}</span>
+                  <Button size="sm" variant="outline" className="gap-2">
+                    <ShoppingCart className="h-4 w-4" /> Access
+                  </Button>
                 </div>
               </div>
             ))}
@@ -53,29 +59,36 @@ const PublicationPage = () => {
         </Container>
       </section>
 
-      {/* Magazines Section */}
-      <section className="py-16 md:py-24 bg-muted/30">
+      <section className="bg-muted/30 py-16 md:py-24">
         <Container>
-           <SectionHeading title="Magazines" subtitle="Periodical insights into the path of Bhakti." align="left" className="mb-12" />
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {magazines.map((mag) => (
-                 <div key={mag.id} className="bg-white p-6 rounded-xl shadow-sm border border-primary/5 flex flex-col items-center text-center">
-                    <div className="h-40 w-full bg-slate-100 rounded-lg mb-6 flex items-center justify-center text-slate-300 font-bold text-2xl">
-                       Cover
-                    </div>
-                    <h3 className="text-xl font-bold mb-2 font-heading">{mag.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-6">{mag.type}</p>
-                    <div className="flex gap-4 w-full">
-                       <Button variant="outline" className="flex-1 gap-2">
-                          <Download className="h-4 w-4" /> PDF
-                       </Button>
-                       <Button variant="outline" className="flex-1 gap-2">
-                          <ExternalLink className="h-4 w-4" /> Read
-                       </Button>
-                    </div>
-                 </div>
-              ))}
-           </div>
+          <SectionHeading
+            title="Bulletins and Journals"
+            subtitle="Periodical resources for updates, reflection, and continued learning."
+            align="left"
+            className="mb-12"
+          />
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {magazines.map((mag) => (
+              <div
+                key={mag.id}
+                className="flex flex-col items-center rounded-xl border border-primary/5 bg-white p-6 text-center shadow-sm"
+              >
+                <div className="mb-6 flex h-40 w-full items-center justify-center rounded-lg bg-slate-100 text-2xl font-bold text-slate-300">
+                  Cover
+                </div>
+                <h3 className="mb-2 font-heading text-xl font-bold">{mag.title}</h3>
+                <p className="mb-6 text-sm text-muted-foreground">{mag.type}</p>
+                <div className="flex w-full gap-4">
+                  <Button variant="outline" className="flex-1 gap-2">
+                    <Download className="h-4 w-4" /> PDF
+                  </Button>
+                  <Button variant="outline" className="flex-1 gap-2">
+                    <ExternalLink className="h-4 w-4" /> Read
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
     </>

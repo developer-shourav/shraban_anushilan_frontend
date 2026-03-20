@@ -1,22 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-
 import navStaringDesign from "@/assets/images/header-starting.png";
 import navEndDesign from "@/assets/images/header-ending.png";
 import featherDesign from "@/assets/images/feather.png";
 import ShrabananushilanLogo from "@/assets/logos/shrabananushilan.png";
-import Image from "next/image";
 
 const NAV_ITEMS = [
   { label: "HOME", href: "/" },
@@ -27,7 +21,6 @@ const NAV_ITEMS = [
   { label: "GALLERY", href: "/gallery" },
   { label: "BLOG", href: "/blog" },
   { label: "CONTACT", href: "/contact" },
-  { label: "DONATION", href: "/donation" },
 ];
 
 const Navbar = () => {
@@ -36,66 +29,58 @@ const Navbar = () => {
 
   return (
     <header className="w-full bg-background">
-      {/* Top Logo Section (White Area) */}
       <div className="py-4">
-        <p className="text-center text-[10px] xs:text-sm lg:text-[16px] text-primary font-bold mb-0 lg:mb-5">
+        <p className="mb-0 text-center text-[10px] font-bold text-primary xs:text-sm lg:mb-5 lg:text-[16px]">
           শ্রী শ্রী গুরু গৌরাঙ্গৌ জয়তঃ
         </p>
         <div className="relative">
-          {/* Logo Image */}
           <Image
             src={ShrabananushilanLogo}
-            alt="Logo"
-            className="absolute left-7 xs:left-9 bottom-1 xs:bottom-0 h-11 xs:h-15 md:h-18 lg:left-50 xl:left-60 lg:bottom-1 lg:h-24 w-auto"
+            alt="Shrabananushilan logo"
+            className="absolute bottom-1 left-7 h-11 w-auto xs:bottom-0 xs:left-9 xs:h-15 md:h-18 lg:bottom-1 lg:left-50 lg:h-24 xl:left-60"
           />
-          <h1 className=" text-secondary text-[33px] xs:text-[40px] md:text-[60px]  lg:text-[70px] xl:text-[80px] font-bold tracking-wide font-BanglaHeading text-center">
+          <h1 className="text-center font-BanglaHeading text-[33px] font-bold tracking-wide text-secondary xs:text-[40px] md:text-[60px] lg:text-[70px] xl:text-[80px]">
             শ্রবণানুশীলন
           </h1>
         </div>
       </div>
 
-      {/* Flute Navigation Bar */}
-      <div className="relative w-full  pb-6">
+      <div className="relative w-full pb-6">
         <nav
-          className="relative h-10 lg:h-8 flex items-center justify-center shadow-lg "
+          className="relative flex h-10 items-center justify-center shadow-lg lg:h-8"
           style={{
-            // Bamboo/Flute Gradient
             background:
               "linear-gradient(to bottom, #cc6600 0%, #ff9900 25%, #ffcc00 50%, #ff9900 75%, #994c00 100%)",
           }}
         >
-          {/* Left Red Border Group */}
-          <div className="absolute left-[9.5%] lg:left-[8%] z-20 flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
+          <div className="absolute left-[9.5%] z-20 flex h-full gap-1 mix-blend-multiply lg:left-[8%]">
+            <div className="h-full w-2 bg-destructive/80 lg:w-2.5 xl:w-3.5" />
+            <div className="h-full w-2 bg-destructive/80 lg:w-2.5 xl:w-3.5" />
           </div>
 
-          {/* Right Red Border Group */}
-          <div className="absolute right-[12%] lg:right-[8%] z-20 hidden md:flex gap-1 h-full mix-blend-multiply">
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
-            <div className="w-2 lg:w-2.5 xl:w-3.5 h-full bg-destructive/80" />
+          <div className="absolute right-[12%] z-20 hidden h-full gap-1 mix-blend-multiply md:flex lg:right-[8%]">
+            <div className="h-full w-2 bg-destructive/80 lg:w-2.5 xl:w-3.5" />
+            <div className="h-full w-2 bg-destructive/80 lg:w-2.5 xl:w-3.5" />
           </div>
-          {/* Left End Cap Image */}
+
           <Image
             src={navStaringDesign}
-            className="w-14.5 h-7 lg:w-30 lg:h-8 xl:w-37.5 xl:h-11  absolute left-0  -top-6.5 lg:-top-7.5 xl:-top-10.5 z-10"
+            className="absolute left-0 -top-6.5 z-10 h-7 w-14.5 lg:-top-7.5 lg:h-8 lg:w-30 xl:-top-10.5 xl:h-11 xl:w-37.5"
             alt=""
           />
 
-          {/* Nav Links */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden items-center gap-1 lg:flex">
             {NAV_ITEMS.map((item, index) => (
               <div key={item.href} className="flex items-center">
                 <Link
                   href={item.href}
                   className={cn(
-                    "px-3 xl:px-4 text-xs xl:text-sm font-bold transition-all hover:text-white uppercase",
-                    pathname === item.href ? "text-white" : "text-foreground",
+                    "px-3 text-xs font-bold uppercase transition-all hover:text-white xl:px-4 xl:text-sm",
+                    pathname === item.href ? "text-white" : "text-foreground"
                   )}
                 >
                   {item.label}
                 </Link>
-                {/* Vertical Divider (The flute "holes" or segments) */}
                 {index !== NAV_ITEMS.length - 1 && (
                   <div className="h-8 w-0.5 bg-linear-to-b from-[#804000] via-accent to-[#804000] opacity-50" />
                 )}
@@ -103,56 +88,77 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right End Cap Image */}
+          <div className="absolute right-16 z-30 hidden items-center gap-2 lg:flex xl:right-24">
+            <Link
+              href="/auth?mode=login"
+              className="rounded-full border border-white/35 bg-white/10 px-3 py-1 text-xs font-bold text-foreground transition hover:bg-white/20"
+            >
+              LOGIN
+            </Link>
+            <Link
+              href="/auth?mode=register"
+              className="rounded-full bg-destructive/85 px-3 py-1 text-xs font-bold text-white transition hover:bg-destructive"
+            >
+              REGISTER
+            </Link>
+          </div>
+
           <Image
             src={navEndDesign}
-            className="w-14.5 h-7 lg:w-30 lg:h-8 xl:w-37.5 xl:h-11 absolute right-0 -top-6.5 lg:-top-7.5 xl:-top-10.5 z-10"
+            className="absolute right-0 -top-6.5 z-10 h-7 w-14.5 lg:-top-7.5 lg:h-8 lg:w-30 xl:-top-10.5 xl:h-11 xl:w-37.5"
             alt=""
           />
 
-          {/* -------------Mobile Toggle-------------*/}
-          <div className="lg:hidden absolute right-4 flex items-center h-full z-30">
+          <div className="absolute right-4 z-30 flex h-full items-center lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
-                <button className="p-1 hover:bg-white/10 rounded-md transition-colors">
-                  <MenuIcon className="h-6 w-6 xs:h-7 xs:w-7 text-foreground hover:text-white" />
+                <button className="rounded-md p-1 transition-colors hover:bg-white/10" aria-label="Open navigation menu">
+                  <MenuIcon className="h-6 w-6 text-foreground hover:text-white xs:h-7 xs:w-7" />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-50 xs:w-70 bg-background p-0 border-l-0">
-                <div className="flex flex-col h-full">
-                  {/* Mobile Header with Logo and Title */}
-                  <div className="p-5 border-b border-primary/10">
+              <SheetContent side="right" className="w-50 border-l-0 bg-background p-0 xs:w-70">
+                <div className="flex h-full flex-col">
+                  <div className="border-b border-primary/10 p-5">
                     <SheetTitle asChild>
                       <div className="flex items-center gap-3">
-                        <Image
-                          src={ShrabananushilanLogo}
-                          alt="Logo"
-                          className="h-10 w-auto xs:h-12"
-                        />
-                        <h2 className="text-secondary text-xl xs:text-2xl font-bold font-BanglaHeading">
-                          শ্রবণানুশীলন
-                        </h2>
+                        <Image src={ShrabananushilanLogo} alt="Shrabananushilan logo" className="h-10 w-auto xs:h-12" />
+                        <h2 className="font-BanglaHeading text-xl font-bold text-secondary xs:text-2xl">শ্রবণানুশীলন</h2>
                       </div>
                     </SheetTitle>
                   </div>
 
-                  {/* Navigation Links */}
-                  <div className="flex flex-col py-2 overflow-y-auto">
+                  <div className="flex flex-col overflow-y-auto py-2">
                     {NAV_ITEMS.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "px-3 py-2.5 text-xs xs:text-sm font-bold transition-all border-l-4",
+                          "border-l-4 px-3 py-2.5 text-xs font-bold transition-all xs:text-sm",
                           pathname === item.href
-                            ? "text-primary border-primary bg-primary/5"
-                            : "text-foreground border-transparent hover:bg-primary/5"
+                            ? "border-primary bg-primary/5 text-primary"
+                            : "border-transparent text-foreground hover:bg-primary/5"
                         )}
                       >
                         {item.label}
                       </Link>
                     ))}
+                    <div className="grid grid-cols-2 gap-3 px-3 pt-4">
+                      <Link
+                        href="/auth?mode=login"
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-full border border-primary/20 px-4 py-2 text-center text-sm font-bold text-primary transition hover:bg-primary/5"
+                      >
+                        Login
+                      </Link>
+                      <Link
+                        href="/auth?mode=register"
+                        onClick={() => setIsOpen(false)}
+                        className="rounded-full bg-primary px-4 py-2 text-center text-sm font-bold text-primary-foreground transition hover:bg-primary/90"
+                      >
+                        Register
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </SheetContent>
@@ -160,8 +166,7 @@ const Navbar = () => {
           </div>
         </nav>
 
-        {/* Peacock Feather Decoration */}
-        <div className="absolute right-8 bottom-16 lg:right-36 lg:bottom-14 pointer-events-none z-0">
+        <div className="pointer-events-none absolute bottom-16 right-8 z-0 lg:bottom-14 lg:right-36">
           <Image src={featherDesign} alt="" className="w-18 xs:w-22 md:w-28 lg:w-34" />
         </div>
       </div>
